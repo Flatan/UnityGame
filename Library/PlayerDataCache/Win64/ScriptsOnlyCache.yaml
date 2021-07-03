@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - PlayerControls
+    - Spawn
     - gun
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -35,6 +36,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 62
@@ -53,6 +56,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2360}
     - Class: 114
       Script: {instanceID: 2674}
+    - Class: 114
+      Script: {instanceID: 23508}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -626,6 +631,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 493c4879c44416457504001d254d56c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Spawn
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

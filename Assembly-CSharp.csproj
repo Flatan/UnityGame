@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\PlayerControls.cs" />
     <Compile Include="Assets\gun.cs" />
+    <Compile Include="Assets\Spawn.cs" />
+    <Compile Include="Assets\CowBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

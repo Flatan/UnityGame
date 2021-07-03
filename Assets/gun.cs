@@ -35,7 +35,9 @@ public class gun : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z * Mathf.Rad2Deg);
 
-        transform.position += new Vector3(Mathf.Cos(rot_z), Mathf.Sin(rot_z), 0)*3;
+        Vector3 direction = new Vector3(Mathf.Cos(rot_z), Mathf.Sin(rot_z));
+
+        transform.position += direction*3;
 
         AudioSource audio = GetComponent<AudioSource>();
         if (Input.GetMouseButton(0))
@@ -45,6 +47,19 @@ public class gun : MonoBehaviour
                 fireThread = new Thread(new ThreadStart(Fire));
                 fireThread.Start();
             }
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction);
+            
+            if (hit.collider != null) 
+            {
+                try
+                {
+                    hit.collider.gameObject.GetComponent<CowBehavior>().Die();
+                    hit.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 2);
+                }
+                catch { }
+            }
+
             if (!audio.isPlaying)
                 audio.Play();
         }
