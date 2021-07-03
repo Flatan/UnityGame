@@ -55,7 +55,7 @@ public class gun : MonoBehaviour
                 try
                 {
                     hit.collider.gameObject.GetComponent<CowBehavior>().Die();
-                    hit.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 2);
+                    hit.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 20 * Time.deltaTime, ForceMode2D.Impulse);
                 }
                 catch { }
             }
